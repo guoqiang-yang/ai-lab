@@ -3,6 +3,7 @@ package com.oscar.ailab.server.controller.ailab;
 import com.oscar.ailab.client.dto.ailab.ConfigResponseDTO;
 import com.oscar.ailab.server.domain.ResultWrapper;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/gemini3/pro")
 public class Gemini3ProController {
 
+    @GetMapping("/config")
     public ResultWrapper<ConfigResponseDTO> getConfig() {
         return ResultWrapper.success(ConfigResponseDTO.builder()
                 .llmName("Gemini3.5 Pro")
