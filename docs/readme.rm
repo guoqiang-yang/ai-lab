@@ -1,0 +1,14 @@
+### DB
+    - dataSource
+        - initialSize       # 初始化建立物理连接的个数
+        - minIdle           # 最小连接池数量
+        - maxActive         # 最大连接池数量
+        - maxWait           # 获取连接时最大等待时间，单位毫秒
+        - validationQuery   # 用来检测连接是否有效的sql，要求是一个查询语句，常用select 'x'
+        - testOnBorrow      # 申请连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能
+
+        - minEvictableIdleTimeMillis        # 连接保持空闲而不被驱逐的最长时间
+        - timeBetweenEvictionRunsMillis     # 链接驱逐时间
+            # 1）Destroy线程会检测连接的间隔时间，如果连接空闲时间大于等于minEvictableIdleTimeMillis则关闭物理连接。
+            # 2) testWhileIdle的判断依据，详细看testWhileIdle属性的说明
+

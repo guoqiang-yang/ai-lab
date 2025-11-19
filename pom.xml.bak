@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.oscar</groupId>
+    <artifactId>we-manor</artifactId>
+    <packaging>pom</packaging>
+    <name>we-manor</name>
+    <version>0.0.1</version>
+
+    <modules>
+        <module>we-manor-client</module>
+        <module>we-manor-server</module>
+    </modules>
+
+    <properties>
+        <springcloud.dependency.version>Greenwich.SR2</springcloud.dependency.version>
+        <springboot.version>2.1.6.RELEASE</springboot.version>
+        <logback-ext-spring.version>0.1.4</logback-ext-spring.version>
+        <logback.version>1.1.7</logback.version>
+        <logstash-logback-encoder.version>4.7</logstash-logback-encoder.version>
+        <slf4j.version>1.7.26</slf4j.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${springcloud.dependency.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${springboot.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+
+<!--            <dependency>-->
+<!--                <groupId>com.alibaba</groupId>-->
+<!--                <artifactId>druid-spring-boot-starter</artifactId>-->
+<!--                <version>1.1.18</version>-->
+<!--            </dependency>-->
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>23.6.1-jre</version>
+            </dependency>
+
+            <!-- logback日志依赖 -->
+            <dependency>
+                <groupId>org.logback-extensions</groupId>
+                <artifactId>logback-ext-spring</artifactId>
+                <version>${logback-ext-spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <!-- logback日志依赖 -->
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>
