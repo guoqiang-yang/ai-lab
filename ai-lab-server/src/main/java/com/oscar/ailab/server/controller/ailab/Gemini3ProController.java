@@ -22,4 +22,8 @@ public class Gemini3ProController {
     }
 
 
+    @GetMapping("/model")
+    public ResultWrapper<String> getModel() {
+        return ResultWrapper.success("Gemini3.5 Pro");
+    }
 }
