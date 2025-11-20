@@ -25,7 +25,7 @@ public class Gemini3ProController {
 
     @GetMapping("/model")
     public ResultWrapper<String> getModel(String model) {
-        model = StringUtils.isEmpty( model ) ? "default" : models;
-        return ResultWrapper.success("Gemini3.5 Pro");
+        model = StringUtils.isEmpty( model ) ? "Gemini3.5 Pro" : model;
+        return ResultWrapper.success(model);
     }
 }
