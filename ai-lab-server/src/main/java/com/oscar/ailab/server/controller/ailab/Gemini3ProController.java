@@ -3,6 +3,7 @@ package com.oscar.ailab.server.controller.ailab;
 import com.oscar.ailab.client.dto.ailab.ConfigResponseDTO;
 import com.oscar.ailab.server.domain.ResultWrapper;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,7 +24,8 @@ public class Gemini3ProController {
 
 
     @GetMapping("/model")
-    public ResultWrapper<String> getModel() {
+    public ResultWrapper<String> getModel(String model) {
+        model = StringUtils.isEmpty( model ) ? "default" : models;
         return ResultWrapper.success("Gemini3.5 Pro");
     }
 }
