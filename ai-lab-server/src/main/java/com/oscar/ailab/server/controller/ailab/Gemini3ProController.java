@@ -11,8 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/gemini3/pro")
 public class Gemini3ProController {
-
-    @GetMapping("/config")
+    
     public ResultWrapper<ConfigResponseDTO> getConfig() {
         return ResultWrapper.success(ConfigResponseDTO.builder()
                 .llmName("Gemini3.5 Pro")
@@ -21,4 +20,6 @@ public class Gemini3ProController {
                 .build()
         );
     }
+
+
 }
